@@ -1,0 +1,73 @@
+\documentclass{exam}
+\usepackage[utf8x]{inputenc}
+
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{wasysym} %smiley
+\usepackage{hyperref}% hyperliens
+\usepackage{tikz}
+\usetikzlibrary{babel,positioning,calc}
+\usepackage[]{circuitikz}
+
+\usepackage{pdfpages}
+
+\langexam{frenchb}
+\correction{false}
+\toptitle{Électronique numérique}{1ière session}
+\author{Ken Hasselmann}
+
+\begin{document}
+
+\changedate{06}{10}{2016}
+\examtitle{Examen d'électronique numérique}{Seconde partie: \og cahier ouvert\fg}
+
+\frontpage{consignes.tex}
+\vspace{5cm}
+\namebox{full}
+\newpage
+
+\section{Faire un four...}
+
+Il vous est demandé de concevoir un four commandé par un dsPIC33 alimenté en 3.3~V identique à celui utilisé durant les laboratoires, avec un cycle d'instruction à 40~MHz.
+
+\begin{itemize}
+	\item Le tableau de commande comprend~:
+	\begin{itemize}
+		\item Un afficheur LCD avec une interface serie RS-232.
+		\item Un sélecteur de programme et un sélecteur de température
+	\end{itemize}
+
+	\item Il est possible de sélectionner 5 niveaux de température différents.
+	Lorsque le four est allumé, l'afficheur affiche la température actuelle du four.
+	Lorsque le four est éteint, l'afficheur affiche l'heure (on ne s'occupera pas du réglage de l'heure).
+
+	\item Une thermistance dépendant linéairement de la température du four est parcourue par un courant de 1~mA et fournit une tension entre 10~mV et 100~mV (correspondant respectivement à $25$ et $250$).
+	Cette température sera échantillonnée par le dsPIC33 à une fréquence de 1~Hz.
+
+	\item La puissance du four est réglée grâce à un signal PWM envoyé par le dsPIC33.
+	La puissance maximale du four est de 3000~W.
+	La période du PWM est de 100~ms.
+
+\end{itemize}
+
+\Question{20}{3}
+{
+	Représentez le système sous la forme d'un schéma-bloc détaillé contenant le C, les différents périphériques du problème et les éventuels circuits d'interfaçage.
+
+}
+{}
+
+\Question{35}{1.5}
+{
+    Combien de lettres y a-t-il dans le mot mot ?
+	\addgrid{7}{5}{axes}
+}
+{}
+
+\adddraft{1}{}
+
+\end{document}
