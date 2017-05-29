@@ -286,10 +286,22 @@
     {
         \newpage
         \hspace{-1.65cm}
-        \begin{tikzpicture}
-        \draw[step=0.5cm,gray,very thin] (0,0) grid (19,25);
-        \node[rotate=0,scale=4.5,text opacity=0.25,anchor=center] at (9.5,1) {Brouillon d\'etachable};
-        \end{tikzpicture}
+        \ifthenelse{\equal{\langu}{english}}%
+        {
+            \begin{tikzpicture}
+            \draw[step=0.5cm,gray,very thin] (0,0) grid (19,25);
+            \node[rotate=0,scale=4.5,text opacity=0.25,anchor=center] at (9.5,1) {Detachable draft};
+            \end{tikzpicture}
+        }
+        {
+            \ifthenelse{\equal{\langu}{frenchb}}%
+            {
+                \begin{tikzpicture}
+                \draw[step=0.5cm,gray,very thin] (0,0) grid (19,25);
+                \node[rotate=0,scale=4.5,text opacity=0.25,anchor=center] at (9.5,1) {Brouillon d\'etachable};
+                \end{tikzpicture}
+            }{}
+        }
     }
     {
     \newpage
