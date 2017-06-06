@@ -218,7 +218,7 @@
                 \normalsize
             }
             {
-                \ifthenelse{\equal{\langu}{english}}%
+                \ifthenelse{\equal{\langu}{frenchb}}%
                 {
                     #3\par
                     \paragraph{R\'eponse :}~\\ \color{darkblue} \small #4
