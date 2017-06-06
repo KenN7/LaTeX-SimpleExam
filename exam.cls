@@ -210,10 +210,22 @@
         }}]
 		\ifthenelse {\boolean{corrige}}
         {
-            #3\par
-            \paragraph{R\'eponse :}~\\ \color{darkblue} \small #4
-            \color{black}
-            \normalsize
+            \ifthenelse{\equal{\langu}{english}}%
+            {
+                #3\par
+                \paragraph{Answer:}~\\ \color{darkblue} \small #4
+                \color{black}
+                \normalsize
+            }
+            {
+                \ifthenelse{\equal{\langu}{frenchb}}%
+                {
+                    #3\par
+                    \paragraph{R\'eponse :}~\\ \color{darkblue} \small #4
+                    \color{black}
+                    \normalsize
+                }
+            }
         }
         {
             #3\par%
