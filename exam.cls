@@ -125,7 +125,7 @@
 % name box
 \newcommand{\namebox}[1]
 {
-    \begin{minipage}[t][][b]{.47\textwidth}
+    \begin{minipage}{.47\textwidth}
     \begin{flushright}
     \begin{large}
     \textbf{\begin{tabular}{|rp{5cm}|}
