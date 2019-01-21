@@ -105,9 +105,25 @@
     }
 }
 
+% Article 88 box
+\newboolean{includeArtRGE}
+\setboolean{includeArtRGE}{false}
+\newcommand{\artRGE}[1]
+{
+        \setboolean{includeArtRGE}{true}
+        \begin{minipage}{.43\textwidth}
+            \input{#1}
+        \end{minipage}
+}
+
+
 % name box
 \newcommand{\namebox}[1]
 {
+    \ifthenelse{\boolean{includeArtRGE}}
+    {
+        \begin{minipage}{.47\textwidth}
+    }{}
     \begin{flushright}
     \begin{large}
     \textbf{\begin{tabular}{|rp{5cm}|}
@@ -166,6 +182,10 @@
     \end{large}
 
     \end{flushright}
+    \ifthenelse{\boolean{includeArtRGE}}
+    {
+        \end{minipage}
+    }{}
 }
 
 
