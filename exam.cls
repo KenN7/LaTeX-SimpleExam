@@ -24,7 +24,6 @@
 \RequirePackage{tikz}
 \RequirePackage{needspace}
 \RequirePackage{fp}
-\RequirePackage{framed}
 
 % conf de fancyhdr
 \fancyhfoffset[ERLO]{0cm} %header with full page width
@@ -107,25 +106,24 @@
 }
 
 % Article 88 box
+\newboolean{includeArtRGE}
+\setboolean{includeArtRGE}{false}
 \newcommand{\artRGE}[1]
 {
-    \ifthenelse{\equal{#1}{true}}
-    {
-        \begin{minipage}{.42\textwidth}
-            \input{art88.tex}
+        \setboolean{includeArtRGE}{true}
+        \begin{minipage}{.43\textwidth}
+            \input{#1}
         \end{minipage}
-    }{
-    \ifthenelse{\equal{#1}{false}}
-    {\begin{minipage}{.42\textwidth}~\end{minipage}}
-    {}
-    }
 }
 
 
 % name box
 \newcommand{\namebox}[1]
 {
-    \begin{minipage}{.47\textwidth}
+    \ifthenelse{\boolean{includeArtRGE}}
+    {
+        \begin{minipage}{.47\textwidth}
+    }{}
     \begin{flushright}
     \begin{large}
     \textbf{\begin{tabular}{|rp{5cm}|}
@@ -184,7 +182,10 @@
     \end{large}
 
     \end{flushright}
-    \end{minipage}
+    \ifthenelse{\boolean{includeArtRGE}}
+    {
+        \end{minipage}
+    }{}
 }
 
 
